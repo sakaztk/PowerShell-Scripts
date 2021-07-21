@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<helpItems xmlns="http://msh" schema="maml">
+    <command:command
+        xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+        xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+        xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+        <command:details>
+            <command:name>Disable-AutoLogon</command:name>
+            <maml:description>
+                <maml:para>Disable Auto-Logon</maml:para>
+            </maml:description>
+            <maml:copyright>
+                <maml:para></maml:para>
+            </maml:copyright>
+             <command:verb>Disable</command:verb>
+             <command:noun>AutoLogon</command:noun>
+            <dev:version></dev:version>
+        </command:details>
+        <command:syntax>
+            <command:syntaxItem>
+                <command:name>Disable-AutoLogon</command:name>
+            </command:syntaxItem>
+        </command:syntax>
+        <command:inputTypes>
+            <command:inputType>
+                <dev:type>
+                    <maml:name>none</maml:name>
+                    <maml:uri />
+                    <maml:description>
+                        <maml:para></maml:para>
+                    </maml:description>
+                </dev:type>
+                <maml:description />
+            </command:inputType>
+        </command:inputTypes>
+        <command:returnValues>
+            <command:returnValue>
+                <dev:type>
+                    <maml:name>System.Object</maml:name>
+                    <maml:uri />
+                    <maml:description>
+                        <maml:para></maml:para>
+                    </maml:description>
+                </dev:type>
+                <maml:description />
+            </command:returnValue>
+        </command:returnValues>
+        <command:parameters>
+        </command:parameters>
+    </command:command>
+</helpItems>

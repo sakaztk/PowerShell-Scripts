@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<helpItems xmlns="http://msh" schema="maml">
+    <command:command
+        xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+        xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+        xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+        <command:details>
+            <command:name>Set-AutoLogon</command:name>
+            <maml:description>
+                <maml:para>Set Auto-Logon and enable it.</maml:para>
+            </maml:description>
+            <maml:copyright>
+                <maml:para></maml:para>
+            </maml:copyright>
+             <command:verb>Set</command:verb>
+             <command:noun>AutoLogon</command:noun>
+            <dev:version></dev:version>
+        </command:details>
+        <command:inputTypes>
+            <command:inputType>
+                <dev:type>
+                    <maml:name>System.String</maml:name>
+                    <maml:uri />
+                    <maml:description>
+                        <maml:para />
+                    </maml:description>
+                </dev:type>
+                <maml:description />
+            </command:inputType>
+        </command:inputTypes>
+        <command:returnValues>
+            <command:returnValue>
+                <dev:type>
+                    <maml:name>System.Object</maml:name>
+                    <maml:uri />
+                    <maml:description>
+                        <maml:para></maml:para>
+                    </maml:description>
+                </dev:type>
+                <maml:description />
+            </command:returnValue>
+        </command:returnValues>
+        <command:syntax>
+            <command:syntaxItem>
+                <maml:name>Set-AutoLogon</maml:name>
+                <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="">
+                   <maml:name>UserName</maml:name>
+                   <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+                </command:parameter>
+                <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="">
+                   <maml:name>Password</maml:name>
+                   <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+                </command:parameter>
+                <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="2" aliases="">
+                   <maml:name>AutoLogonCount</maml:name>
+                   <command:parameterValue required="false" variableLength="false">Int32</command:parameterValue>
+                </command:parameter>
+            </command:syntaxItem>
+        </command:syntax>
+        <command:parameters>
+            <!--Parameter 'UserName'-->
+            <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="">
+                <maml:name>UserName</maml:name>
+                <maml:description>
+                    <maml:para>Specify the Username of Auto-Logon.</maml:para>
+                </maml:description>
+                <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+                <dev:type>
+                    <maml:name>String</maml:name>
+                    <maml:uri></maml:uri>
+                </dev:type>
+                <dev:defaultValue></dev:defaultValue>
+            </command:parameter>
+            <!--Parameter 'Password'-->
+            <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="">
+                <maml:name>Password</maml:name>
+                <maml:description>
+                    <maml:para>Specify the Password of Auto-Logon.</maml:para>
+                </maml:description>
+                <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+                <dev:type>
+                    <maml:name>String</maml:name>
+                    <maml:uri></maml:uri>
+                </dev:type>
+                <dev:defaultValue></dev:defaultValue>
+            </command:parameter>
+            <!--Parameter 'AutoLogonCount'-->
+            <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="2" aliases="">
+                <maml:name>AutoLogonCount</maml:name>
+                <maml:description>
+                    <maml:para>Specify the Number of Auto-Logon Count.</maml:para>
+                </maml:description>
+                <command:parameterValue required="false" variableLength="false">Int32</command:parameterValue>
+                <dev:type>
+                    <maml:name>Int32</maml:name>
+                    <maml:uri></maml:uri>
+                </dev:type>
+                <dev:defaultValue>1</dev:defaultValue>
+            </command:parameter>
+        </command:parameters>
+    </command:command>
+</helpItems>
