@@ -80,11 +80,12 @@
             if (-not($found)) {
                 (Get-ChildItem $basePath).PSChildName | Foreach-Object {
                     if ($_ -in $targets) {
-                        New-ItemProperty (Join-Path $basePath $_) -PropertyType 'DWORD' -Name "StateFlags$('{0:D4}' -f $i)" -Value 2 -Force | Out-Null
+                        $value = 2
                     }
                     else {
-                        New-ItemProperty (Join-Path $basePath $_) -PropertyType 'DWORD' -Name "StateFlags$('{0:D4}' -f $i)" -Value 0 -Force | Out-Null
+                        $value = 0
                     }
+                    New-ItemProperty (Join-Path $basePath $_) -PropertyType 'DWORD' -Name "StateFlags$('{0:D4}' -f $i)" -Value $value -Force | Out-Null
                 }
                 Start-Process cleanmgr.exe -ArgumentList "/SAGERUN:$i" -Wait
                 (Get-ChildItem $basePath).PSChildName | Foreach-Object {
