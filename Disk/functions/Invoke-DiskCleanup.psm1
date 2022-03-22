@@ -72,7 +72,7 @@
         foreach($i in 1..9999) {
             $found = $false
             (Get-ChildItem $basePath).PSPath | Foreach-Object {
-                if ($null -ne (Get-ItemProperty $($_)  )."StateFlags$i") {
+                if ($null -ne (Get-ItemProperty $($_))."StateFlags$i") {
                     $found = $true
                     continue
                 }
