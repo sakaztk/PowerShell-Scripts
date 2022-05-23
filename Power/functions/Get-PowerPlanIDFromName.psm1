@@ -7,7 +7,7 @@ function Get-PowerPlanIDFromName {
         [String]$Type = 'GUID'
     )
     Process {
-        $targetPlan = Get-CimInstance -Class Win32_PowerPlan -Namespace root\cimv2\power | Where-Object {$_.ElementName -eq $Name}
+        $targetPlan = Get-CimInstance -Class Win32_PowerPlan -Namespace root/CIMV2/power | Where-Object {$_.ElementName -eq $Name}
         switch ($Type) {
             'GUID' {
                 $ret = $targetPlan.InstanceID -replace '.*({[^}]+})', '$1'
