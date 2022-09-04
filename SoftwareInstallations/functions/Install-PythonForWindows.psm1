@@ -1,5 +1,5 @@
 #https://www.python.org/
-#https://docs.python.org/ja/3/using/windows.html
+#https://docs.python.org/3/using/windows.html
 function Install-PythonForWindows {
     [CmdletBinding(DefaultParameterSetName='pythonorg-passive')]
     Param(
