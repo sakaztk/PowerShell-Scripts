@@ -21,7 +21,7 @@ function Invoke-ParallelPing {
 
     $tasks = $ips | ForEach-Object {
         Write-Verbose "Pinging: $_"
-        (New-Object System.Net.NetworkInformation.Ping).SendPingAsync($_)
+        [System.Net.NetworkInformation.Ping]::New().SendPingAsync($_)
     }
     [System.Threading.Tasks.Task]::WaitAll($tasks)
     $tasks.Result

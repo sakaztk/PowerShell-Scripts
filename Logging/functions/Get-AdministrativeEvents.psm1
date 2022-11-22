@@ -1,6 +1,15 @@
 function Get-AdministrativeEvents {
+    [CmdletBinding(DefaultParameterSetName = 'object')]
     param (
-        [Int]$Seconds = 0
+        [Parameter(ParameterSetName='object')]
+        [Parameter(ParameterSetName='evtx')]
+        [Int]$Seconds = 0,
+        [Parameter(ParameterSetName='evtx')]
+        [Switch]$evtx,
+        [Parameter(ParameterSetName='evtx', Mandatory=$true)]
+        [System.IO.FileInfo]$To,
+        [Parameter(ParameterSetName='evtx')]
+        [Switch]$Overwrite
     )
     $filterXML = "$($env:TEMP)\AdministrativeEvents.xml"
     $loglist = @()
@@ -19,5 +28,11 @@ function Get-AdministrativeEvents {
         }
     }
     Add-Content $filterXML "  </Query>`r`n</QueryList>"
-    Get-WinEvent -FilterXml ([xml](Get-Content $filterXML)) -ErrorAction SilentlyContinue
+    if ($evtx) {
+        wevtutil export-log $filterXML $to /structuredquery:true /overwrite:$Overwrite
+    }
+    else {
+        Get-WinEvent -FilterXml ([xml](Get-Content $filterXML)) -ErrorAction SilentlyContinue
+    }
+    Remove-Item -Path $filterXML -Force
 }
