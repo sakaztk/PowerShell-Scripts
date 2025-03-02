@@ -1,4 +1,5 @@
 function Set-TaskbarAlignment {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory,ValueFromPipeline,Position=0)]
         [ValidateSet('Left', 'Center')]
@@ -9,8 +10,8 @@ function Set-TaskbarAlignment {
     }
     Process {
         switch ($Mode) {
-            "Left" {$value = 0}
-            "Center" {$value = 1}
+            'Left' {$value = 0}
+            'Center' {$value = 1}
         }
         Set-ItemProperty -Path $key -Name TaskbarAl -Value $value
     }

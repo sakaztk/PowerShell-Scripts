@@ -1,7 +1,8 @@
 function Set-TaskbarPenMenu {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory,ValueFromPipeline,Position=0)]
-        [ValidateSet('Hide', 'Show')]
+        [ValidateSet('Off', 'On')]
         [String]$State
     )
     Begin {
@@ -9,8 +10,8 @@ function Set-TaskbarPenMenu {
     }
     Process {
         switch ($State) {
-            "Hide" {$value = 0}
-            "Show" {$value = 1}
+            'Off' {$value = 0}
+            'On' {$value = 1}
         }
         Set-ItemProperty -Path $key -Name PenWorkspaceButtonDesiredVisibility -Value $value
     }

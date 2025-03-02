@@ -1,4 +1,5 @@
 function Set-ColorMode {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory,ValueFromPipeline,Position=0)]
         [ValidateSet('Light', 'Dark')]
@@ -9,8 +10,8 @@ function Set-ColorMode {
     }
     Process {
         switch ($Mode) {
-            "Dark" {$value = 0}
-            "Light" {$value = 1}
+            'Dark' {$value = 0}
+            'Light' {$value = 1}
         }
         Set-ItemProperty -Path $key -Name SystemUsesLightTheme -Value $value
         Set-ItemProperty -Path $key -Name AppsUseLightTheme -Value $value
